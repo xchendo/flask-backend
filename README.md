@@ -23,8 +23,7 @@
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
 ## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Simple backend allowing for CRUD operations of "flasks" (flow tasks) with user authentication. 
 
 ## Installation
 
@@ -36,6 +35,8 @@ $ npm install
 
 ```bash
 # development
+$ docker-compose up
+# create the server and database in pgadmin if first time: should be running on localhost
 $ npm run start
 
 # watch mode
