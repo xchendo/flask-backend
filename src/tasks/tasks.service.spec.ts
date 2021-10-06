@@ -29,7 +29,7 @@ describe('TasksService', () => {
   describe('createTask', () => {
     it('calls TasksRepository.createTask and returns the result', () => {
       expect(repository.createTask).not.toHaveBeenCalled();
-      // const result = service.createTask({title: 'test', description: 'test'});
+      service.createTask({title: 'test', description: 'test'});
       expect(repository.createTask).toHaveBeenCalled();
 
     });
