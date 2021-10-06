@@ -3,9 +3,13 @@ import { AppController } from './app.controller'
 import { AppService } from './app.service'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { ConfigModule, ConfigService } from '@nestjs/config'
+import { TasksController } from './tasks/tasks.controller';
+import { TasksService } from './tasks/tasks.service';
+import { TasksRepository } from './tasks/tasks.repository'
 
 @Module({
   imports: [
+    TypeOrmModule.forFeature([TasksRepository]),
     ConfigModule.forRoot({
       envFilePath: [`.env.stage.${process.env.STAGE}`],
     }),
@@ -27,8 +31,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config'
       },
     }),
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, TasksController],
+  providers: [AppService, TasksService],
 })
 
 export class AppModule {
