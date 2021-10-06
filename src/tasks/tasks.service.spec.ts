@@ -4,6 +4,7 @@ import { TasksRepository } from './tasks.repository';
 
 const mockTasksRepository = () => ({
   createTask: jest.fn(),
+  find: jest.fn(),
 });
 
 describe('TasksService', () => {
@@ -32,6 +33,14 @@ describe('TasksService', () => {
       service.createTask({title: 'test', description: 'test'});
       expect(repository.createTask).toHaveBeenCalled();
 
+    });
+  });
+
+  describe('getAllTasks', () => {
+    it('calls TasksRepository.find and returns the result', () => {
+      expect(repository.find).not.toHaveBeenCalled();
+      service.getAllTasks();
+      expect(repository.find).toHaveBeenCalled();
     });
   });
 });

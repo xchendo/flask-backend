@@ -2,6 +2,9 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { TasksController } from './tasks.controller';
 import { TasksService } from './tasks.service';
 
+// Note: Adding tests to the controller as well as to the service might be superfluous
+// just keeping this one in here for good measure / reference
+
 describe('TasksController', () => {
   let controller: TasksController;
   // inject dependencies
